@@ -57,6 +57,19 @@ SUMMARY
 		$email -> 			field value : email
 		$password -> 		field value : password
 	*/
+	function userExist($db, $email, $password)
+    {
+        $sql = "SELECT * FROM users WHERE email = :email AND password = :password LIMIT 1";
+
+        $req = $db->prepare($sql);
+        $req->execute(array(
+            ':email' => $email,
+            ':password' => $password
+        ));
+
+
+    }
+
 	function userConnection(PDO $db, $email, $password){
 		if(!empty($email) && !empty($password)){
 			//Requête SQL
