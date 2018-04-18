@@ -42,7 +42,7 @@ SUMMARY
 		$req->execute(array(
 			':username' => $username,
 			':email' => $email,
-			':password' => $password,
+			':password' => sha1($password),
 		));
 		
 
@@ -64,7 +64,7 @@ SUMMARY
         $req = $db->prepare($sql);
         $req->execute(array(
             ':email' => $email,
-            ':password' => $password
+            ':password' => sha1($password)
         ));
 
 
@@ -78,7 +78,7 @@ SUMMARY
 			$req = $db->prepare($sql);
 			$req->execute(array(
 				':email' => $email,
-				':password' => $password
+				':password' => sha1($password)
 			));
 
 			$result = $req->fetch(PDO::FETCH_ASSOC);

@@ -12,6 +12,8 @@ require('model/functions.fn.php');
 	exit();
 }
 
+echo hash('sha256', 'pass');
+
 $musics = listMusics($db);
 
 include 'view/_header.php';
