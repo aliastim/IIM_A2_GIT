@@ -12,7 +12,7 @@ require('model/functions.fn.php');
 	exit();
 }
 
-echo hash('sha256', 'pass');
+//echo hash('sha256', 'pass');
 
 $musics = listMusics($db);
 
