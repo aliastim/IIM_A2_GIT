@@ -19,6 +19,7 @@ if(	isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
 
 
         userRegistration($db, $username, $email, $_POST['password']);
+        header("Location: login.php");
 
 
 
