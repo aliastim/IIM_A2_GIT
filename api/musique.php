@@ -7,11 +7,27 @@
  */
 session_start();
 require('../config/config.php');
+require('../model/functions.musiques.php');
 require('../model/functions.fn.php');
 
 
+//$arr = readMusics($db);
 
-//$arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+$music_id = 1;
+$_GET['id']= 1;
 
-echo json_encode($arr);
+$data = selectMusic($db, $music_id);
+
+//foreach ($arr as &$value) {
+
+    //echo $value['id'];
+    //echo json_encode($value['id']);
+//}
+
+//echo json_encode($value);
+
+//echo json_encode($arr);
+
+header('Content-Type: application/json');
+echo json_encode($data);
 

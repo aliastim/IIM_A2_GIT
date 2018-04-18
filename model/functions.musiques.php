@@ -8,14 +8,12 @@
 
 function readMusics($db)
 {
-    $sql = "SELECT id, title ,file, created_at FROM musics";
+    $sql = "SELECT * FROM musics";
     $stmt = $db->prepare( $sql );
     $stmt->execute();
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // values to fill up our form
-    $title = $row['title'];
-    $file = $row['file'];
-    $created_at = $row['created_at'];
+
+
 				
 }
