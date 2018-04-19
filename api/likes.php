@@ -13,10 +13,10 @@ require('../model/functions.likes.php');
 //$arr = readMusics($db);
 
 
-$music_id = $_GET['like_id'];
+$like_id = $_GET['like_id'];
 //$_GET['id']= 1;
 
-$data = selectMusic($db, $music_id);
+$data = countLike($db, $like_id);
 
 
 
