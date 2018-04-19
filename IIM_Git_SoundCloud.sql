@@ -64,6 +64,70 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `picture`, `created_at`) VALUES
 (1, 'Git', 'git@initiation.com', 'password', 'view/profil_pic/e8df43b8a90546b15da8591c89711879.1.jpg', '2015-10-01 11:13:46');
 
+
+--
+-- Structure de la table `musics_likes`
+--
+
+CREATE TABLE `musics_likes` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL COMMENT 'refers to id in users table',
+  `title` varchar(100) NOT NULL,
+  `likes` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `musics`
+--
+
+INSERT INTO `musics_likes` (`id`, `user_id`, `title`, `likes`, `created_at`) VALUES
+(1, 1, 'UN*DEUX - Shopping Day', '45786', '2015-10-01 13:35:05'),
+(2, 2, 'Skyfall', '5458', '2015-10-01 13:35:05'),
+(3, 2, 'Notre dame de Paris', '45768', '2015-10-01 13:35:05'),
+(4, 1, 'TRYO', '4095', '2015-10-01 13:35:05'),
+(5, 2, 'FlicFlac - Can''t Get Away (Bootleg)', '9867', '2015-10-02 11:41:26');
+
+--
+-- Structure de la table `musics_comments`
+--
+
+CREATE TABLE `musics_comments` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL COMMENT 'refers to id in users table',
+  `title` varchar(100) NOT NULL,
+  `comments` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `musics`
+--
+
+INSERT INTO `musics_comments` (`id`, `user_id`, `title`, `comments`, `created_at`) VALUES
+(1, 1, 'UN*DEUX - Shopping Day', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at dui velit. Curabitur ultricies nec diam vel vehicula. Cras at commodo eros. Donec id blandit nunc.', '2015-10-01 13:35:05'),
+(2, 2, 'Skyfall', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at dui velit. Curabitur ultricies nec diam vel vehicula. Cras at commodo eros. Donec id blandit nunc.', '2015-10-01 13:35:05'),
+(3, 2, 'Notre dame de Paris', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at dui velit. Curabitur ultricies nec diam vel vehicula. Cras at commodo eros. Donec id blandit nunc.', '2015-10-01 13:35:05'),
+(4, 1, 'TRYO', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at dui velit. Curabitur ultricies nec diam vel vehicula. Cras at commodo eros. Donec id blandit nunc.', '2015-10-01 13:35:05'),
+(5, 2, 'FlicFlac - Can''t Get Away (Bootleg)', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at dui velit. Curabitur ultricies nec diam vel vehicula. Cras at commodo eros. Donec id blandit nunc.', '2015-10-02 11:41:26');
+
+--
+-- Structure de la table `musics_comments`
+--
+
+CREATE TABLE `musics_tags` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `tags` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `musics_tags` (`id`, `title`, `tags`, `created_at`) VALUES
+(1, 'UN*DEUX - Shopping Day', 'un, deux, shopping, day, musique, music, pop, rock', '2015-10-01 13:35:05'),
+(2, 'FlicFlac - Can''t Get Away (Bootleg)', 'flic, flac, can, get, away, musique, music, pop, rock', '2015-10-02 11:41:26');
+
+
+
 --
 -- Index pour les tables exportées
 --
