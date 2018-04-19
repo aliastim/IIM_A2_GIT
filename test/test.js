@@ -39,6 +39,26 @@ test("get All Musics", async (t)=>
    //t.is(music.title, "Love Me Tender");
 });
 
+test("get All Likes", async (t)=>
+{
+    try{
+        console.log(basicURL("likes.php"));
+        const res = await req(basicURL("likes.php"));
+        const body = await res.json();
+        console.log(body);
+        t.truthy(body);
+    }catch(err){
+        console.log(err);
+        t.fail();
+    }
+
+
+    //t.truthy(body.length);
+    //const music = body[0];
+    //t.truthy(music.title);
+    //t.is(music.title, "Love Me Tender");
+});
+
 // npm test
 
 // Créer un dossier
