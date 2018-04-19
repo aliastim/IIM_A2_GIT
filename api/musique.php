@@ -11,10 +11,10 @@ require('../model/functions.musiques.php');
 require('../model/functions.fn.php');
 
 
-$arr = readMusics($db);
+//$arr = readMusics($db);
 
 
-$music_id = 1;
+$music_id = $_GET['music_id'];
 //$_GET['id']= 1;
 
 $data = selectMusic($db, $music_id);
