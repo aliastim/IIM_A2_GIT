@@ -1,7 +1,15 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: timotheecorrado
- * Date: 19/04/2018
- * Time: 14:38
- */
+<?php session_start();
+require('config/config.php');
+require('model/functions.fn.php');
+
+
+
+
+
+
+
+
+include 'view/_header.php';
+
+include 'view/_footer.php';
+
