@@ -23,7 +23,7 @@
 					<div class="form-submit">
 						<input type="submit" value="Connecter">
 					</div>
-					<p class="account">Vous n'avez pas de compte ? <a href="register.php">Inscrivez vous !</a></p>
+					<p class="account">Vous n'avez pas de compte ? <a href="register.php">Inscrivez vous !</a><br>Décrouvrez notre <a href="../api.php">API</a></p>
 				</form>
 			</div>
 		</div>
