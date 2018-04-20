@@ -7,25 +7,16 @@
  */
 session_start();
 require('../config/config.php');
-require('../model/functions.likes.php');
-
-
-
+require('../model/functions.comments.php');
 
 
 $comment_id = $_GET['comment_id'];
 
 
-$data = countLike($db, $comment_id);
-
-
-
-
-
-
-
-
+$data = countComment($db, $comment_id);
 
 
 header('Content-Type: application/json');
 echo json_encode($data);
+
+
