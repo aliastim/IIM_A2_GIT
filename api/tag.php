@@ -7,16 +7,16 @@
  */
 session_start();
 require('../config/config.php');
-require('../model/functions.likes.php');
+require('../model/functions.tags.php');
 
 
 
 
 
-$like_id = $_GET['like_id'];
+$tag_id = $_GET['tag_id'];
 
 
-$data = countLike($db, $like_id);
+$data = countTag($db, $tag_id);
 
 
 header('Content-Type: application/json');
