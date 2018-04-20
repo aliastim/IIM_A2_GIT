@@ -59,9 +59,65 @@ test("get All Likes", async (t)=>
     //t.is(music.title, "Love Me Tender");
 });
 
+
+
+
+test("get All Comments", async (t)=>
+{
+    try{
+        console.log(basicURL("comments.php"));
+        const res = await req(basicURL("comments.php"));
+        const body = await res.json();
+        console.log(body);
+        t.truthy(body);
+    }catch(err){
+        console.log(err);
+        t.fail();
+    }
+
+
+    //t.truthy(body.length);
+    //const music = body[0];
+    //t.truthy(music.title);
+    //t.is(music.title, "Love Me Tender");
+});
+
+
+
+test("get All Tags", async (t)=>
+{
+    try{
+        console.log(basicURL("tag.php"));
+        const res = await req(basicURL("tag.php"));
+        const body = await res.json();
+        console.log(body);
+        t.truthy(body);
+    }catch(err){
+        console.log(err);
+        t.fail();
+    }
+
+
+    //t.truthy(body.length);
+    //const music = body[0];
+    //t.truthy(music.title);
+    //t.is(music.title, "Love Me Tender");
+});
+
+
+
+
+
+
+
+
+
 // npm test
 
 // Créer un dossier
 // créer un fichier JS
 // npx create-ava --next
 // npm install --save-dev requisition
+
+
+
